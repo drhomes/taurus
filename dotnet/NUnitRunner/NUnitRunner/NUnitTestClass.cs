@@ -8,7 +8,7 @@ namespace NUnitRunner
         [Test()]
         public void TestCase()
         {
-            NUnitRunner.Main(new [] { "--iterations", "1", "--target", "../../NUnitSelenium/SeleniumSuite/bin/Release/SeleniumSuite.dll"});
+            NUnitRunner.Main(new [] { "--iterations", "1", "--target", "../../NUnitSelenium/SeleniumSuite/bin/Release/SeleniumSuite.dll", "--parameters", "UserName=TestUser|Password=TesterPWD"});
         }
     }
 }

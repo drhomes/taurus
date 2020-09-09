@@ -65,6 +65,13 @@ class NUnitExecutor(SubprocessedExecutor, HavingInstallableTools):
             cmdline += ['--concurrency', str(int(load.concurrency))]
         if load.ramp_up:
             cmdline += ['--ramp_up', str(int(load.ramp_up))]
+        scenario = self.get_scenario()
+        if "variables" in scenario and isinstance(scenario["variables"], dict):
+            variables = scenario.get("variables")
+            parameters = ""
+            for param in variables.keys():
+                parameters += param + "=" + str(variables[param]) + "|"
+            cmdline += ['--parameters', parameters.rstrip("|")]
         if not is_windows():
             self.env.add_path({"MONO_PATH": self.runner_dir})
 

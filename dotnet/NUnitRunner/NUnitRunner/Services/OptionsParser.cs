@@ -17,6 +17,7 @@ namespace NUnitRunner.Services
                 { "l|ramp_up=", "time to ramp all concurrent users", (int l) => options.RampUp = l},
                 { "r|report-file=", "Name of report file", r => options.ReportFile = r },
                 { "t|target=", "Test suite", t => options.TargetAssembly = t },
+                { "p|parameters=", "test pamaters", p => options.Parameters = p },
                 { "h|help", "show this message and exit", h => options.ShouldShowHelp = h != null },
             };
 
@@ -49,6 +50,7 @@ namespace NUnitRunner.Services
             Console.WriteLine("Ramp period: {0}", options.RampUp);
             Console.WriteLine("Hold for: {0}", options.Hold);
             Console.WriteLine("Report file: {0}", options.ReportFile);
+            Console.WriteLine("Test Parameters: {0}", options.Parameters);
             Console.WriteLine("Target: {0}", options.TargetAssembly);
 
             return options;
@@ -65,6 +67,7 @@ namespace NUnitRunner.Services
             Console.WriteLine("\t --ramp_up L - time to ramp all concurrent users");
             Console.WriteLine("\t --report-file REPORT_FILE - filename of report file");
             Console.WriteLine("\t --target TARGET_ASSEMBLY - assembly which will be used to load tests from");
+            Console.WriteLine("\t --parameters TEST_PARAMETERS - parameters in the \"KEY1=VALUE1|KEY2=VALUE2\" format");
             Console.WriteLine("\t --help - show this message and exit");
             Environment.Exit(0);
         }

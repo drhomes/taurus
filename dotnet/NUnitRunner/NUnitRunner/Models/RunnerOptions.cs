@@ -12,6 +12,7 @@
             RampUp = 0;
             TargetAssembly = null;
             ShouldShowHelp = false;
+            Parameters = null;
         }
 
         public string ReportFile { get; set; }
@@ -29,5 +30,7 @@
         public string TargetAssembly { get; set; }
 
         public bool ShouldShowHelp { get; set; }
+
+        public string Parameters { get; set; }
     }
 }
