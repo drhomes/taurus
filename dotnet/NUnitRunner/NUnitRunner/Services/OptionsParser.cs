@@ -17,7 +17,7 @@ namespace NUnitRunner.Services
                 { "l|ramp_up=", "time to ramp all concurrent users", (int l) => options.RampUp = l},
                 { "r|report-file=", "Name of report file", r => options.ReportFile = r },
                 { "t|target=", "Test suite", t => options.TargetAssembly = t },
-                { "p|parameters=", "test pamaters", p => options.Parameters = p },
+                { "p|parameters=", "test parameters", p => options.Parameters = p },
                 { "h|help", "show this message and exit", h => options.ShouldShowHelp = h != null },
             };
 
